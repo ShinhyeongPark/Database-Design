@@ -15,15 +15,17 @@ public class Createtable
 			Statement stmt=con.createStatement();
 			
 			StringBuffer sql = new StringBuffer();
-			sql.append("create table Player(p_name varchar(20)");
-			sql.append(", p_position varchar(20)");
-			sql.append(", p_age int");
-			sql.append(", address varchar(30)");
-			sql.append(", team_name varchar(30)");
-			sql.append(", constraint player_p_name_pk primary key(p_name))");
+			sql.append("create table Mercenary(m_name varchar(20)");
+			sql.append(", m_position varchar(20)");
+			sql.append(", m_age int");
+			sql.append(", talent varchar(30)");
+			sql.append(", gender varchar(30)");
+			sql.append(", constraint Mercenary_m_name_pk primary key(m_name))");
+			
+			
 					
 			stmt.executeUpdate(sql.toString());
-			System.out.println("Mercenary 테이블 생성 완료")
+			System.out.println("Mercenary 테이블 생성 완료");
 			con.close();
 		}catch(Exception e) {System.out.println(e);}
 	}
