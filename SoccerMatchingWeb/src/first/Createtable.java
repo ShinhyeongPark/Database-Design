@@ -1,8 +1,10 @@
+package first;
+
 import java.sql.*;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
-public class create_table
+
+public class Createtable
 {
 	public static void main(String args[])
 	{
@@ -21,7 +23,9 @@ public class create_table
 			sql.append(", constraint player_p_name_pk primary key(p_name))");
 					
 			stmt.executeUpdate(sql.toString());
+			System.out.println("Mercenary 테이블 생성 완료")
 			con.close();
 		}catch(Exception e) {System.out.println(e);}
 	}
 }
+
