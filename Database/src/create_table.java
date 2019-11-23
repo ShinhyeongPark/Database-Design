@@ -12,8 +12,8 @@ public class create_table
 					"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
 			Statement stmt=con.createStatement();
 			
-			StringBuffer sql =new StringBuffer();
-			sql.append("create table player(p_name int");
+			StringBuffer sql = new StringBuffer();
+			sql.append("create table Player(p_name varchar(20)");
 			sql.append(", p_position varchar(20)");
 			sql.append(", p_age int");
 			sql.append(", address varchar(30)");
