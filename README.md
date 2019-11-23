@@ -57,4 +57,4 @@ They can play soccer in time they want, so they manage their time.
 - 상대팀과 같은 색깔의 유니폼을 입을 수 없다.
   
 ## ER Diagram
-![ER-diagram.jpg](C:\Users\박신형\Documents\database/ER-diagram.jpg)
+![ER-diagram](https://user-images.githubusercontent.com/57867611/69480458-e32d7f80-0e4a-11ea-9da3-05c34672214e.JPG)
