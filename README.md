@@ -1,4 +1,4 @@
-#SOCCER MATCHING WEB
+# SOCCER MATCHING WEB
 - - -
 ## Project Title
 Soccer Matching Web
@@ -16,37 +16,37 @@ As people using this web can play with unknown player as a team, they can play s
 They can play soccer in time they want, so they manage their time.
 
 ## Tech used
-<ul> mysql
-<ul> php
-<ul> css
-<ul> jsp
+- mysql
+- php
+- css
+- jsp
 
 ## Development environment
-<ul> CentOS7
-<ul> Eclipse
+- CentOS7
+- Eclipse
 
 ## Module
-<ul>Create Team
-<ul> Join Team
-<ul> Play as a Mercernary
-<ul> Make a reservation with other Team
-<ul> Look up opponent
+- Create Team
+- Join Team
+- Play as a Mercernary
+- Make a reservation with other Team
+- Look up opponent
 
 ## Requirement Analysis
-*<JOIN>*
+<JOIN>
 - 여러 명의 선수는 하나의 팀에 들어갈 수 있다.
 - 한 명의 선수는 한 팀에만 들어갈 수 있다.
-*<CREATE>*
+<CREATE>
 - 한 명 이상의 선수가 한 팀을 만들 수 있다.
-*<ENROLL>*
+<ENROLL>
 - 한 명의 선수는 하나의 용병으로 등록할 수 있다.
-*<APPLY>*
+<APPLY>
 - 용병은 1개 이상의 경기를 신청할 수 있다.
 <SCOUT>
 - 한 팀은 제한 없이 용병을 영입할 수 있다.
-*<RESERVATION>*
+<RESERVATION>
 - 최소 1팀 최대 2팀이 한 개 이상의 경기를 예약할 수 있다.
-*<exp>*
+<exp>
 - 팀이 있는 선수도 용병으로 등록할 수 있다.
 - 용병은 한 팀에만 들어갈 수 있다.
 - 용병은 경기를 예약할 수 없다.
@@ -55,3 +55,6 @@ They can play soccer in time they want, so they manage their time.
 - 12시 이후 경기는 예약할 수 없다.
 - 한 경기는 2시간 단위로 진행된다.
 - 상대팀과 같은 색깔의 유니폼을 입을 수 없다.
+  
+## ER Diagram
+![ER-diagram.jpg](C:\Users\박신형\Documents\database/ER-diagram.jpg)
