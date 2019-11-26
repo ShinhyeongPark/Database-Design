@@ -50,4 +50,7 @@ They can play soccer in time they want, so they manage their time.
 - 상대팀과 같은 색깔의 유니폼을 입을 수 없다.
   
 ## ER Diagram
-![ER-diagram](https://user-images.githubusercontent.com/57867611/69480458-e32d7f80-0e4a-11ea-9da3-05c34672214e.JPG)
+![ER-Diagram](https://user-images.githubusercontent.com/57867611/69639524-02711a80-10a0-11ea-8994-2697a930bf3a.JPG)
+## Relational Schema
+![RelationalSchema](https://user-images.githubusercontent.com/57867611/69639535-0866fb80-10a0-11ea-86a0-4d73e5864a82.JPG)
+
