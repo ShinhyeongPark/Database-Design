@@ -17,9 +17,7 @@ They can play soccer in time they want, so they manage their time.
 
 ## Tech used
 - mysql
-- php
-- css
-- jsp
+- java
 
 ## Development environment
 - CentOS7
