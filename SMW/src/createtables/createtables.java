@@ -13,7 +13,7 @@ public class createtables {
 					"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
 			Statement stmt=con.createStatement();
 			
-			/*String sql= "CREATE TABLE Player( " +
+			String sql= "CREATE TABLE Player( " +
 						"id VARCHAR(20) NOT NULL, " +
 						"password VARCHAR(30) NOT NULL, " +
 						"name VARCHAR(20) NOT NULL, " +
@@ -25,7 +25,7 @@ public class createtables {
 						"PRIMARY KEY (id))";	
 	
 			stmt.executeUpdate(sql);
-			System.out.println("Player 테이블 생성 완료");*/
+			System.out.println("Player 테이블 생성 완료");
 			
 			/*String sql= "CREATE TABLE Mercenary( " +
 					"nickname VARCHAR(20) NOT NULL," +
@@ -40,7 +40,7 @@ public class createtables {
 			stmt.executeUpdate(sql);
 			System.out.println("Mercenary 테이블 생성 완료");*/
 			
-			String sql= "CREATE TABLE Team( " +
+			/*String sql= "CREATE TABLE Team( " +
 					"team_name VARCHAR(20) NOT NULL," +
 					"member_num INTEGER NOT NULL," +
 					"leader VARCHAR(20) NOT NULL," +
@@ -77,9 +77,9 @@ public class createtables {
 					"away VARCHAR(20) NOT NULL," +
 					"u_home VARCHAR(20) NOT NULL," +
 					"u_away VARCHAR(20) NOT NULL," +
-					"PRIMARY KEY (no_match))";
+					"PRIMARY KEY (no_match))";*/
 			
-			stmt.executeUpdate(sql);
+			//stmt.executeUpdate(sql);
 			System.out.println("Team_match 테이블 생성 완료");
 			
 			con.close();
