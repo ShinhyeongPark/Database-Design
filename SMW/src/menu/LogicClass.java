@@ -162,5 +162,271 @@ public class LogicClass {
 			} catch (Exception e) {}
 		}
 	}
+	///////////////////////////////////////////////////////////////////////////////////////////
+	public void SelectMercenary() {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "SELECT * FROM Mercenary";
+		ResultSet rs = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection(
+						"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery(); 
+			
+			while (rs.next()) {
+				String nickname = rs.getString("nickname");  
+				String position = rs.getString("position");
+				String talent = rs.getString("talent");
+				String gender = rs.getString("gender");
+				int age = rs.getInt("age");
+				String doo = rs.getString("do");
+				String si = rs.getString("si");
+				System.out.println(nickname + "\t" + position + "\t" + talent + "\t" + gender+ "\t"+ age+"\t"+ doo+ "\t"+si);
+			}System.out.println("\n");
+		}catch(Exception e) {System.out.println(e);}
+		finally {
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (Exception e) {}
+		}	
+	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	public void SelectTeam() {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "SELECT * FROM Team";
+		ResultSet rs = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection(
+						"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery(); 
+			
+			while (rs.next()) {
+				String team_name = rs.getString("team_name");  
+				int member_num = rs.getInt("member_num");
+				String leader = rs.getString("leader");
+				String team_talent = rs.getString("team_talent");
+				String team_type = rs.getString("team_type");
+				String region = rs.getString("region");
+				System.out.println(team_name + "\t" + member_num + "\t" + leader + "\t" + team_talent+ "\t"+ team_type+"\t"+ region);
+			}System.out.println("\n");
+		}catch(Exception e) {System.out.println(e);}
+		finally {
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (Exception e) {}
+		}	
+	}
+////////////////////////////////////////////////////////////////////
+	public void SelectTeam_match() {Connection con = null;
+	PreparedStatement pstmt = null;
+	String sql = "SELECT * FROM Team_match";
+	ResultSet rs = null;
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection(
+					"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery(); 
+		
+		while (rs.next()) {
+			String location = rs.getString("location");  
+			String date = rs.getString("date");
+			String strat_time = rs.getString("start_time");
+			String match_kind = rs.getString("match_kind");
+			String match_type = rs.getString("match_type");
+			String home = rs.getString("home");
+			String away = rs.getString("away");
+			String u_home = rs.getString("u_home");
+			String u_away = rs.getString("u_away");
+			System.out.println(location + "\t" + date + "\t" + strat_time + "\t" + match_kind+ "\t"+ match_type+"\t"+ home+"\t"+ away+"\t"+ u_home+"\t"+ u_away);
+		}System.out.println("\n");
+	}catch(Exception e) {System.out.println(e);}
+	finally {
+		try {
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {}
+	}	
+}
+	
+////////////////////////////////////////////////////////////////////
+	public void SelectGame() {Connection con = null;
+	PreparedStatement pstmt = null;
+	String sql = "SELECT * FROM Game";
+	ResultSet rs = null;
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection(
+					"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery(); 
+		
+		while (rs.next()) {
+			String location = rs.getString("location");  
+			String date = rs.getString("date");
+			String strat_time = rs.getString("start_time");
+			String game_kind = rs.getString("game_kind");
+			String game_type = rs.getString("game_type");
+			String team_name = rs.getString("team_name");
+			int player_num = rs.getInt("player_num");
+	
+			System.out.println(location + "\t" + date + "\t" + strat_time + "\t" + game_kind+ "\t"+ game_type+"\t"+ team_name+"\t"+ player_num);
+		}System.out.println("\n");
+	}catch(Exception e) {System.out.println(e);}
+	finally {
+		try {
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {}
+	}	
+}
+	
+////////////////////////////////////////////////////////////////////
+	public void SelectResult() {Connection con = null;
+	PreparedStatement pstmt = null;
+	String sql = "SELECT Result.home, Result.away, score,location,date,start_time FROM Team_match, Result WHERE Team_match.no_match = Result.no_match";
+	ResultSet rs = null;
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection(
+					"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery(); 
+		
+		while (rs.next()) {
+			String home = rs.getString("Result.home");  
+			String away = rs.getString("Result.away");
+			String score = rs.getString("score");
+			String location = rs.getString("location");
+			String date = rs.getString("date");
+			String start_time = rs.getString("start_time");
+			System.out.println(home + "\t" + away + "\t" + score + "\t" + location+ "\t"+ date+"\t"+ start_time);
+		}System.out.println("\n");
+	}catch(Exception e) {System.out.println(e);}
+	finally {
+		try {
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {}
+	}	
 }
 ////////////////////////////////////////////////////////////////////
+	public void MercenaryGame() {Connection con = null;
+	PreparedStatement pstmt = null;
+	String sql = "SELECT * FROM Game WHERE player_num<12 OR (player_num>12 AND player_num<24)";
+	ResultSet rs = null;
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection(
+					"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery(); 
+		
+		while (rs.next()) {
+			String location = rs.getString("location");  
+			String date = rs.getString("date");
+			String strat_time = rs.getString("start_time");
+			String game_kind = rs.getString("game_kind");
+			String game_type = rs.getString("game_type");
+			String team_name = rs.getString("team_name");
+			int player_num = rs.getInt("player_num");
+	
+			System.out.println(location + "\t" + date + "\t" + strat_time + "\t" + game_kind+ "\t"+ game_type+"\t"+ team_name+"\t"+ player_num);
+		}System.out.println("\n");
+	}catch(Exception e) {System.out.println(e);}
+	finally {
+		try {
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {}
+	}	
+}
+////////////////////////////////////////////////////////////////////////////////
+
+	public void TeamUniform() {Connection con = null;
+	PreparedStatement pstmt = null;
+	String sql = "SELECT * FROM Team_uniform";
+	ResultSet rs = null;
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection(
+					"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+		pstmt = con.prepareStatement(sql);
+		rs = pstmt.executeQuery(); 
+		
+		while (rs.next()) {
+
+			String team_name = rs.getString("team_name");
+			String u_color = rs.getString("u_color");
+	
+			System.out.println(team_name + "\t" + u_color);
+		}System.out.println("\n");
+	}catch(Exception e) {System.out.println(e);}
+	finally {
+		try {
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {}
+	}	
+}
+	
+	public void SearchTeam() {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection(
+						"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+			String sql = "SELECT team_name,member_num,leader,team_talent,team_type,region FROM Player WHERE team_name =";
+			
+			System.out.print("검색할 팀: "); // 검색할 선수를 입력받아서
+			String find_team = scan.nextLine();
+			
+			pstmt = con.prepareStatement(sql + "'" + find_team + "'");
+
+			rs = pstmt.executeQuery(); 
+			System.out.println("----"+ find_team +"팀  검색 결과-------");
+			
+			while (rs.next()) {
+				String team_name = rs.getString("team_name"); 
+				String leader = rs.getString("leader"); 
+				int member_num = rs.getInt("member_num");
+				String team_talent = rs.getString("team_talent");
+				String team_type = rs.getString("team_type");
+				String region = rs.getString("region");
+				System.out.println(team_name + "\t" + leader + "\t" + member_num + "\t" + team_talent+ "\t"+team_type+ "\t"+ region);
+			}
+		}catch(Exception e) {System.out.println("검색한 팀이  존재하지 않습니다.");}
+		finally {
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (Exception e) {}
+		}
+	}	
+}
