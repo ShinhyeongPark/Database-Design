@@ -50,5 +50,6 @@ They can play soccer in time they want, so they manage their time.
 ## ER Diagram
 ![ER-Diagram](https://user-images.githubusercontent.com/57867611/69639524-02711a80-10a0-11ea-8994-2697a930bf3a.JPG)
 ## Relational Schema
-![RelationalSchema](https://user-images.githubusercontent.com/57867611/69639535-0866fb80-10a0-11ea-86a0-4d73e5864a82.JPG)
+![FinalMapping](https://user-images.githubusercontent.com/57867611/69835447-1b86f080-1285-11ea-81a6-23d8b41836de.JPG)
+
 
