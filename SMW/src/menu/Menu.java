@@ -19,7 +19,7 @@ public class Menu {
 				System.out.println("7:매치목록 	8:경기목록");
 				System.out.println("9:매치결과목록	10:용병가능게임");
 				System.out.println("11:팀별유니폼	12:팀 검색");
-				System.out.println("13:용병검색	12:팀 검색");
+				System.out.println("13:용병검색	14:경기장예약현황");
 				System.out.println("=========================");
 				System.out.print("메뉴를 선택하시오: ");
 				option=scan.nextInt();
@@ -61,7 +61,10 @@ public class Menu {
 					 CallLogic.SearchTeam();
 				}
 				else if(option == 13){
-					 //CallLogic.SearchMercenary();
+					 CallLogic.SearchMercenary();
+				}
+				else if(option == 14){
+					 CallLogic.Livelocation();
 				}
 				else if(option ==99) {
 					System.out.print("프로그램 종료");

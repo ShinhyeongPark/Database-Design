@@ -401,7 +401,7 @@ public class LogicClass {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con=DriverManager.getConnection(
 						"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
-			String sql = "SELECT team_name,member_num,leader,team_talent,team_type,region FROM Player WHERE team_name =";
+			String sql = "SELECT team_name,member_num,leader,team_talent,team_type,region FROM Team WHERE team_name =";
 			
 			System.out.print("검색할 팀: "); // 검색할 선수를 입력받아서
 			String find_team = scan.nextLine();
@@ -429,4 +429,72 @@ public class LogicClass {
 			} catch (Exception e) {}
 		}
 	}	
+public void SearchMercenary() {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection(
+						"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+			String sql = "SELECT nickname,position,talent,gender,age FROM Mercenary WHERE position =";
+			
+			System.out.print("용병 포지션: "); // 검색할 선수를 입력받아서
+			String find_position = scan.nextLine();
+			
+			pstmt = con.prepareStatement(sql + "'" + find_position + "'");
+
+			rs = pstmt.executeQuery(); 
+			System.out.println("----"+ find_position +"팀  검색 결과-------");
+			
+			while (rs.next()) {
+				String position = rs.getString("position"); 
+				String nickname = rs.getString("nickname"); 
+				int age = rs.getInt("age");
+				String talent = rs.getString("talent");
+				String gender = rs.getString("gender");
+				
+				System.out.println(position + "\t" + nickname + "\t" + age + "\t" + talent+ "\t"+gender);
+			}
+		}catch(Exception e) {System.out.println("검색한 팀이  존재하지 않습니다.");}
+		finally {
+			try {
+				rs.close();
+				pstmt.close();
+				con.close();
+			} catch (Exception e) {}
+		}
+	}	
+
+public void Livelocation() {Connection con = null;
+PreparedStatement pstmt = null;
+String sql = "SELECT Game.location,Game.date,Game.start_time FROM Game,Team_match WHERE Game.location = Team_match.location";
+ResultSet rs = null;
+
+try {
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	con=DriverManager.getConnection(
+				"jdbc:mysql://192.168.246.5:4567/SoccerMatchingWeb","parksh", "1234");
+	pstmt = con.prepareStatement(sql);
+	rs = pstmt.executeQuery(); 
+	
+	while (rs.next()) {
+		String location = rs.getString("location");  
+		String date = rs.getString("date");
+		String strat_time = rs.getString("start_time");
+
+
+		System.out.println(location + "\t" + date + "\t" + strat_time);
+	}System.out.println("\n");
+}catch(Exception e) {System.out.println(e);}
+finally {
+	try {
+		rs.close();
+		pstmt.close();
+		con.close();
+	} catch (Exception e) {}
+}	
+}
 }
